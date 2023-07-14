@@ -1,7 +1,6 @@
 #include <stdio.h>
-
 /**
- * main - print a string using printf and return new line
+ * main - entry point
  * Return: 0
  */
 
