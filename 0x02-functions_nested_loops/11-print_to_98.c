@@ -1,23 +1,23 @@
-#include"main.h"
+#include <stdio.h>
 
 /**
- * print_to_98 - print n to 98 counts
- *           separated by comma, followed
- *           by space and number should be
- *           printed in order
- *
- * @n: input
-*/
-
+ * print_to_98 - Prints all natural numbers from input to 98,
+ *               in order separated by a comma followed by a space.
+ * @n: The number to begin counting at.
+ */
 void print_to_98(int n)
 {
-	int counter;
+	if (n >= 98)
+	{
+		while (n > 98)
+			printf("%d, ", n--);
+		printf("%d\n", n);
+	}
 
-	if (n > 98)
-		for (counter = n; counter > 98; --counter)
-			printf("%d, ", counter);
 	else
-		for (counter = n; counter < 98; ++counter)
-			printf("%d, ", counter);
-	printf("98\n");
+	{
+		while (n < 98)
+			printf("%d, ", n++);
+		printf("%d\n", n);
+	}
 }
