@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_strncat -  function to concatinate two strings
+*_strncpy -  function to concatinate two strings
 *
 *@dest: the inputed pointer of array
 *@src: the inputed pointer of array
@@ -8,24 +8,16 @@
 *
 *Return: return the length of the array
 */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-int a = 0;
-char *p = dest;
-while (*p)
+int i;
+for (i = 0; i < n && src[i] != '\0'; i++)
 {
-p++;
+dest[i] = src[i];
 }
-while (a < n)
+for ( ; i < n; i++)
 {
-if (*src)
-{
-*p++ = *src++;
-a++;
+dest[i] = '\0';
 }
-else
-a++;
-}
-*p = '\0';
 return (dest);
 }
