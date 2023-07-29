@@ -1,33 +1,28 @@
 #include "main.h"
+
 /**
-*cap_string -  function to concatinate two strings
-*
-*@str: the inputed pointer of array
-*
-*Return: return the length of the array
-*/
-char *cap_string(char *str)
+ * leet - Encodes a string in 1337
+ * @s: string to be encoded
+ *
+ * Return: the resulting string
+ */
+char *leet(char *s)
 {
-char *p = str;
-int cap = 1;
-while (*p)
-{
-if (*p == ' ' || *p == '\t' || *p == '\n' || *p == ','
-|| *p == ';' || *p == '.' ||
-*p == '!' || *p == '?' || *p == '"' || *p ==
-'(' || *p == ')' || *p == '{' || *p == '}')
-{
-cap = 1;
-}
-else if (cap)
-{
-if (*p >= 'a' && *p <= 'z')
-{
-*p -= ('a' - 'A');
-}
-cap = 0;
-}
-p++;
-}
-return (str);
+	int i, j;
+
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+			}
+		}
+	}
+
+	return (s);
 }
